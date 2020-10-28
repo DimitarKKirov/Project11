@@ -4,7 +4,7 @@ import POJO.MySQLItems;
 
 import java.util.List;
 
-public class MySQLDriver extends Driver {
+public class MySQLDatabaseDriver extends DatabaseDriver {
 
     @Override
     public List<MySQLItems> getAllDataMySql() {

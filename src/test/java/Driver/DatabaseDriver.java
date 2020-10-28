@@ -8,7 +8,7 @@ import sqlRequests.SQLQueries;
 
 import java.util.List;
 
-public class Driver implements SQLQueries, DatabaseHelper {
+public class DatabaseDriver implements SQLQueries, DatabaseHelper {
 
     @Override
     public List<MySQLItems> getAllDataMySql(){
