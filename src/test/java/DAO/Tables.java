@@ -10,8 +10,8 @@ public class Tables {
         this.Driver=Driver;
     }
 
-    public List<Object> getAllData(){
-        Driver.
-    }
+//    public List<Object> getAllData(){
+//
+//    }
 
 }
