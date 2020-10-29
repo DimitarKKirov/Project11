@@ -7,9 +7,16 @@ import java.util.List;
 public interface DatabaseHelper {
 
     List<MySQLItems> getAllDataMySql();
-    String getItemByID(int iD);
-    int getItemsCount();
-    int getItemsDetailsCount();
-    int getLoadCount();
-    String getItemByName(String name);
+    String getItemByIDMySql(int iD);
+    int getItemsCountMySql();
+    int getItemsDetailsCountMySql();
+    int getLoadCountMySql();
+    String getItemByNameMySql(String name);
+
+    List<MySQLItems> getAllDataOracle();
+    String getItemByIDOracle(int iD);
+    int getItemsCountOracle();
+    int getItemsDetailsCountOracle();
+    int getLoadCountOracle();
+    String getItemByNameOracle(String name);
 }

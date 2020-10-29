@@ -7,32 +7,32 @@ import java.util.List;
 public class OracleDatabaseDriver extends DatabaseDriver {
 
     @Override
-    public List<MySQLItems> getAllDataMySql() {
+    public List<MySQLItems> getAllDataOracle() {
         return super.getAllDataMySql();
     }
 
     @Override
-    public String getItemByID(int iD) {
-        return super.getItemByID(iD);
+    public String getItemByIDOracle(int iD) {
+        return super.getItemByIDOracle(iD);
     }
 
     @Override
-    public int getItemsCount() {
-        return super.getItemsCount();
+    public int getItemsCountOracle() {
+        return super.getItemsCountOracle();
     }
 
     @Override
-    public int getItemsDetailsCount() {
-        return super.getItemsDetailsCount();
+    public int getItemsDetailsCountOracle() {
+        return super.getItemsDetailsCountOracle();
     }
 
     @Override
-    public int getLoadCount() {
-        return super.getLoadCount();
+    public int getLoadCountOracle() {
+        return super.getLoadCountOracle();
     }
 
     @Override
-    public String getItemByName(String name) {
-        return super.getItemByName(name);
+    public String getItemByNameOracle(String name) {
+        return super.getItemByNameOracle(name);
     }
 }

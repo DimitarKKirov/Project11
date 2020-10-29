@@ -12,27 +12,27 @@ public class MySQLDatabaseDriver extends DatabaseDriver {
     }
 
     @Override
-    public String getItemByID(int iD) {
-        return super.getItemByID(iD);
+    public String getItemByIDMySql(int iD) {
+        return super.getItemByIDMySql(iD);
     }
 
     @Override
-    public int getItemsCount() {
-        return super.getItemsCount();
+    public int getItemsCountMySql() {
+        return super.getItemsCountMySql();
     }
 
     @Override
-    public int getItemsDetailsCount() {
-        return super.getItemsDetailsCount();
+    public int getItemsDetailsCountMySql() {
+        return super.getItemsDetailsCountMySql();
     }
 
     @Override
-    public int getLoadCount() {
-        return super.getLoadCount();
+    public int getLoadCountMySql() {
+        return super.getLoadCountMySql();
     }
 
     @Override
-    public String getItemByName(String name) {
-        return super.getItemByName(name);
+    public String getItemByNameMySql(String name) {
+        return super.getItemByNameMySql(name);
     }
 }
