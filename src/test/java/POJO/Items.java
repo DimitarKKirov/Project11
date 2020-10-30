@@ -12,16 +12,16 @@ import java.io.IOException;
 
 public class Items implements Paths {
 
-    private String itemsSerialNumber;
+    private int itemSerialNumber;
     private String itemName;
 
 
-    public String getItemsSerialNumber() {
-        return itemsSerialNumber;
+    public int getItemSerialNumber() {
+        return itemSerialNumber;
     }
 
-    public void setItemsSerialNumber(String itemsSerialNumber) {
-        this.itemsSerialNumber = itemsSerialNumber;
+    public void setItemSerialNumber(int itemSerialNumber) {
+        this.itemSerialNumber = itemSerialNumber;
     }
 
     public String getItemName() {
@@ -32,39 +32,5 @@ public class Items implements Paths {
         this.itemName = itemName;
     }
 
-    public Items(){}
-    public Items(String itemsSerialNumber, String itemName) {
-        this.itemsSerialNumber = itemsSerialNumber;
-        this.itemName = itemName;
-    }
 
-    void  itemsFields() {
-        JSONParser reader = new JSONParser();
-        try {
-            FileReader fileReader = new FileReader(jsonPath);
-            Object temp = reader.parse(fileReader);
-            JSONArray jsTemp = (JSONArray) temp;
-            for (Object o : jsTemp) {
-                JSONObject tempJson = (JSONObject) o;
-                if (tempJson.containsKey("ItemName")) {
-                    String name = tempJson.get("ItemName").toString();
-                    setItemName(name);
-                    System.out.println(name);
-                }
-                if (tempJson.containsKey("ItemSerialNumber")) {
-                    String serial = tempJson.get("ItemSerialNumber").toString();
-
-                    setItemsSerialNumber(serial);
-                    System.out.println(serial);
-                }
-            }
-        } catch (ParseException | IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void main(String[] args) {
-        Items items = new Items();
-        items.itemsFields();
-    }
 }

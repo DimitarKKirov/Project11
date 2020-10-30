@@ -1,25 +1,25 @@
 [
   {
-    "ItemSerialNumber": "0123687954",
-    "ItemName": "Item1"
+    "itemSerialNumber": "0123687954",
+    "itemName": "Item1"
   },
   {
-    "ItemQuantity": "16",
-    "ItemSellingPrice": "125.65",
-    "ItemID": "1"
+    "itemQuantity": "16",
+    "itemSellingPrice": "125.65",
+    "itemID": "1"
   },
   {
-    "ItemPaidPricePerPiece": "99.99",
+    "itemPaidPricePerPiece": "99.99",
     "DetailsID": "1"
   },
   {
-    "ItemSerialNumber": "0123687955",
-    "ItemName": "Item2"
+    "itemSerialNumber": "0123687955",
+    "itemName": "Item2"
   },
   {
-    "ItemQuantity": "13",
-    "ItemSellingPrice": "86.99",
-    "ItemID": "2"
+    "itemQuantity": "13",
+    "itemSellingPrice": "86.99",
+    "itemID": "2"
 
   },
   {
@@ -120,7 +120,7 @@
 
   },
   {
-    "ItemSerialNumber": "0123688003",
+    "ItemSerialNumber": "01236880036",
     "ItemName": "Item9"
   },
   {
@@ -135,7 +135,7 @@
 
   },
   {
-    "ItemSerialNumber": "0123688001",
+    "ItemSerialNumber": "012368800359",
     "ItemName": "Item10"
   },
   {

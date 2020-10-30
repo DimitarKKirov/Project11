@@ -1,8 +1,7 @@
 package Driver;
 
-import POJO.Items;
-import POJO.MySQLItems;
-import POJO.OracleTables;
+import POJO.*;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.knowm.yank.Yank;
 import sqlRequests.SQLQueries;
 
@@ -25,9 +24,22 @@ public class MySQLDatabaseDriver extends DatabaseDriver implements SQLQueries {
     }
 
     @Override
-    public String getItemByID(int iD){
+    public Items getItemByID(int iD){
         String sql = getItemByID+iD;
-        return Yank.queryBean(sql, Items.class,null).toString();
+        return Yank.queryBean(sql, Items.class,null);
+    }
+
+    @Override
+    public ItemsDetails getItemDetailsByID(int ID) {
+        String sql = getItemsDetailsByID+ID;
+        return Yank.queryBean(sql, ItemsDetails.class,null);
+    }
+
+    @Override
+    public ItemsLoadingDetails getItemLoadingDetailsByID(int ID) {
+        String sql = getLoadItemByID+ID;
+        return Yank.queryBean(sql, ItemsLoadingDetails.class,null);
+
     }
 
     @Override

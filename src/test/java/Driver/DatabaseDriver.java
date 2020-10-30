@@ -1,5 +1,8 @@
 package Driver;
 
+import POJO.Items;
+import POJO.ItemsDetails;
+import POJO.ItemsLoadingDetails;
 import POJO.MySQLItems;
 import interfaces.DatabaseHelper;
 import org.knowm.yank.PropertiesUtils;
@@ -21,10 +24,19 @@ public  abstract class DatabaseDriver implements DatabaseHelper {
     }
 
     @Override
-    public String getItemByID(int iD) {
+    public Items getItemByID(int iD) {
         return null;
     }
 
+    @Override
+    public ItemsDetails getItemDetailsByID(int ID) {
+        return null;
+    }
+
+    @Override
+    public ItemsLoadingDetails getItemLoadingDetailsByID(int ID) {
+        return null;
+    }
     @Override
     public int getItemsCount() {
         return 0;
@@ -44,6 +56,7 @@ public  abstract class DatabaseDriver implements DatabaseHelper {
     public String getItemByName(String name) {
         return null;
     }
+
     public void createMySQLConnection() {
         Yank.setupDefaultConnectionPool(MySQLConnection);
 

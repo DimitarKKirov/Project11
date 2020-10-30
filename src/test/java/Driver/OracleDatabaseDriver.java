@@ -1,8 +1,6 @@
 package Driver;
 
-import POJO.Items;
-import POJO.MySQLItems;
-import POJO.OracleTables;
+import POJO.*;
 import org.knowm.yank.Yank;
 import sqlRequests.OrcleQueries;
 
@@ -13,28 +11,41 @@ public class OracleDatabaseDriver extends DatabaseDriver implements OrcleQueries
 
     @Override
     public List<OracleTables> getAllDataOracle() {
-        return Yank.queryBeanList(orcleGetALL, OracleTables.class,null);
+        return Yank.queryBeanList(orcleGetALL, OracleTables.class, null);
     }
 
     @Override
-    public String getItemByID(int iD) {
-        String sql = orcleGetItemByID+iD;
-        return Yank.queryBean(sql, Items.class,null).toString();
+    public Items getItemByID(int iD) {
+        String sql = orcleGetItemByID + iD;
+        return Yank.queryBean(sql, Items.class, null);
+
+    }
+
+    @Override
+    public ItemsDetails getItemDetailsByID(int ID) {
+        String sql = orcleGetItemsDetailsByID + ID;
+        return Yank.queryBean(sql, ItemsDetails.class, null);
+    }
+
+    @Override
+    public ItemsLoadingDetails getItemLoadingDetailsByID(int ID) {
+        String sql = orcleGetLoadItemByID + ID;
+        return Yank.queryBean(sql, ItemsLoadingDetails.class, null);
     }
 
     @Override
     public int getItemsCount() {
-        return Yank.queryScalar(orcleGetItemsCount,Integer.class,null);
+        return Yank.queryScalar(orcleGetItemsCount, Integer.class, null);
     }
 
     @Override
     public int getItemsDetailsCount() {
-        return Yank.queryScalar(orcleGetItemsDetailsCount,Integer.class,null);
+        return Yank.queryScalar(orcleGetItemsDetailsCount, Integer.class, null);
     }
 
     @Override
     public int getLoadCount() {
-        return Yank.queryScalar(orcleGetLoadItemCount,Integer.class,null);
+        return Yank.queryScalar(orcleGetLoadItemCount, Integer.class, null);
     }
 
     @Override
@@ -49,7 +60,7 @@ public class OracleDatabaseDriver extends DatabaseDriver implements OrcleQueries
 
     @Override
     public String getItemByName(String name) {
-        String sql = orcleGetItemByNames+name;
-        return Yank.queryBean(sql, Items.class,null).toString();
+        String sql = orcleGetItemByNames + name;
+        return Yank.queryBean(sql, Items.class, null).toString();
     }
 }
