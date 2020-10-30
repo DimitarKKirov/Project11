@@ -2,74 +2,54 @@ package Driver;
 
 import POJO.Items;
 import POJO.MySQLItems;
+import POJO.OracleTables;
 import org.knowm.yank.Yank;
+import sqlRequests.OrcleQueries;
 
 import java.util.List;
 
-public class OracleDatabaseDriver extends DatabaseDriver {
+public class OracleDatabaseDriver extends DatabaseDriver implements OrcleQueries {
+
 
     @Override
-    public List<MySQLItems> getAllDataOracle() {
-        return super.getAllDataMySql();
+    public List<OracleTables> getAllDataOracle() {
+        return Yank.queryBeanList(orcleGetALL, OracleTables.class,null);
     }
 
     @Override
-    public String getItemByIDOracle(int iD) {
-        return super.getItemByIDOracle(iD);
+    public String getItemByID(int iD) {
+        String sql = orcleGetItemByID+iD;
+        return Yank.queryBean(sql, Items.class,null).toString();
     }
 
     @Override
-    public int getItemsCountOracle() {
-        return super.getItemsCountOracle();
+    public int getItemsCount() {
+        return Yank.executeSQLKey(orcleGetItemsCount,null);
     }
 
     @Override
-    public int getItemsDetailsCountOracle() {
-        return super.getItemsDetailsCountOracle();
+    public int getItemsDetailsCount() {
+        return Yank.executeSQLKey(orcleGetItemsDetailsCount,null);
     }
 
     @Override
-    public int getLoadCountOracle() {
-        return super.getLoadCountOracle();
+    public int getLoadCount() {
+        return Yank.executeSQLKey(orcleGetLoadItemCount,null);
     }
 
     @Override
-    public String getItemByNameOracle(String name) {
-        return super.getItemByNameOracle(name);
+    public void createOracleConnection() {
+        super.createOracleConnection();
     }
 
+    @Override
+    public void closeConnection() {
+        super.closeConnection();
+    }
 
-
-
-//    @Override
-//    public List<MySQLItems> getAllDataOracle() {
-//        return Yank.queryBeanList(orcleGetALL, MySQLItems.class,null);
-//    }
-//
-//    @Override
-//    public String getItemByIDOracle(int iD) {
-//        String sql = orcleGetItemByID+iD;
-//        return Yank.queryBean(sql, Items.class,null).toString();
-//    }
-//
-//    @Override
-//    public int getItemsCountOracle() {
-//        return Yank.executeSQLKey(orcleGetItemsCount,null);
-//    }
-//
-//    @Override
-//    public int getItemsDetailsCountOracle() {
-//        return Yank.executeSQLKey(orcleGetItemsDetailsCount,null);
-//    }
-//
-//    @Override
-//    public int getLoadCountOracle() {
-//        return Yank.executeSQLKey(orcleGetLoadItemCount,null);
-//    }
-//
-//    @Override
-//    public String getItemByNameOracle(String name) {
-//        String sql = orcleGetItemByNames+name;
-//        return Yank.queryBean(sql, Items.class,null).toString();
-//    }
+    @Override
+    public String getItemByName(String name) {
+        String sql = orcleGetItemByNames+name;
+        return Yank.queryBean(sql, Items.class,null).toString();
+    }
 }

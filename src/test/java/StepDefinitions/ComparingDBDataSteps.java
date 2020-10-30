@@ -16,7 +16,6 @@ public class ComparingDBDataSteps {
 
 
 
-
     }
 
     @Given("the data from Oracle DB")
