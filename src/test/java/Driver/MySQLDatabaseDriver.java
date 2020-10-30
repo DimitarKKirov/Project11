@@ -32,17 +32,17 @@ public class MySQLDatabaseDriver extends DatabaseDriver implements SQLQueries {
 
     @Override
     public int getItemsCount() {
-        return Yank.executeSQLKey(getItemsCount,null);
+        return Yank.queryScalar(getItemsCount,Integer.class,null);
     }
 
     @Override
     public int getItemsDetailsCount() {
-        return Yank.executeSQLKey(getItemsDetailsCount,null);
+        return Yank.queryScalar(getItemsDetailsCount,Integer.class,null);
     }
 
     @Override
     public int getLoadCount() {
-        return Yank.executeSQLKey(getLoadItemCount,null);
+        return Yank.queryScalar(getLoadItemCount,Integer.class,null);
     }
 
     @Override

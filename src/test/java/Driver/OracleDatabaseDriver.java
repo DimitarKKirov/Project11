@@ -24,17 +24,17 @@ public class OracleDatabaseDriver extends DatabaseDriver implements OrcleQueries
 
     @Override
     public int getItemsCount() {
-        return Yank.executeSQLKey(orcleGetItemsCount,null);
+        return Yank.queryScalar(orcleGetItemsCount,Integer.class,null);
     }
 
     @Override
     public int getItemsDetailsCount() {
-        return Yank.executeSQLKey(orcleGetItemsDetailsCount,null);
+        return Yank.queryScalar(orcleGetItemsDetailsCount,Integer.class,null);
     }
 
     @Override
     public int getLoadCount() {
-        return Yank.executeSQLKey(orcleGetLoadItemCount,null);
+        return Yank.queryScalar(orcleGetLoadItemCount,Integer.class,null);
     }
 
     @Override

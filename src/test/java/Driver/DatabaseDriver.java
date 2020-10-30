@@ -1,13 +1,9 @@
 package Driver;
 
-import POJO.Items;
 import POJO.MySQLItems;
-import POJO.OracleTables;
 import interfaces.DatabaseHelper;
 import org.knowm.yank.PropertiesUtils;
 import org.knowm.yank.Yank;
-import sqlRequests.OrcleQueries;
-import sqlRequests.SQLQueries;
 
 import java.util.List;
 import java.util.Properties;
