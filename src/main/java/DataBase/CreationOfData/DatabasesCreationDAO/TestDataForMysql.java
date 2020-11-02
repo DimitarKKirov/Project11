@@ -55,8 +55,8 @@ public class TestDataForMysql implements Paths {
         JSONParser reader = new JSONParser();
         itemName = new ArrayList<>();
         try {
-            String name = null;
-            String serial = null;
+            String name;
+            String serial;
             FileReader fileReader = new FileReader(jsonPath);
             Object temp = reader.parse(fileReader);
             JSONArray jsTemp = (JSONArray) temp;
@@ -160,19 +160,19 @@ public class TestDataForMysql implements Paths {
         Yank.releaseAllConnectionPools();
     }
 
-    public static void main(String[] args) {
-        TestDataForMysql test = new TestDataForMysql();
-        test.createConnection();
-        test.createTableItems();
-        test.createTableItemsDetails();
-        test.createTableItemsLoadingDetails();
-        test.itemsFields();
-        test.populateItems();
-        test.itemsDetailsFields();
-        test.populateItemsDetails();
-        test.itemsLoadingDetailsFields();
-        test.populateLoadingDetails();
-        test.closeConnection();
-    }
+//    public static void main(String[] args) {
+//        TestDataForMysql test = new TestDataForMysql();
+//        test.createConnection();
+//        test.createTableItems();
+//        test.createTableItemsDetails();
+//        test.createTableItemsLoadingDetails();
+//        test.itemsFields();
+//        test.populateItems();
+//        test.itemsDetailsFields();
+//        test.populateItemsDetails();
+//        test.itemsLoadingDetailsFields();
+//        test.populateLoadingDetails();
+//        test.closeConnection();
+//    }
 
 }

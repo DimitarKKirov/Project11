@@ -158,20 +158,21 @@ public class TestDataForOracle implements Paths {
     public void closeConnection(){
         Yank.releaseAllConnectionPools();
     }
-    public static void main(String[] args) {
-        TestDataForOracle test = new TestDataForOracle();
-        test.createConnection();
-        test.createTableItems();
-        test.createTableItemsDetails();
-        test.createTableItemsLoadingDetails();
-        test.itemsFields();
-        test.populateItems();
-        test.itemsDetailsFields();
-        test.populateItemsDetails();
-        test.itemsLoadingDetailsFields();
-        test.populateLoadingDetails();
-        test.closeConnection();
-    }
+
+//    public static void main(String[] args) {
+//        TestDataForOracle test = new TestDataForOracle();
+//        test.createConnection();
+//        test.createTableItems();
+//        test.createTableItemsDetails();
+//        test.createTableItemsLoadingDetails();
+//        test.itemsFields();
+//        test.populateItems();
+//        test.itemsDetailsFields();
+//        test.populateItemsDetails();
+//        test.itemsLoadingDetailsFields();
+//        test.populateLoadingDetails();
+//        test.closeConnection();
+//    }
 
 }
 
